@@ -10,6 +10,10 @@
     <title>Profrost Systems</title>
 
     <style>
+        :root {
+            --main-blue: #1e88e5;     /* Svetlija plava boja */
+        }
+
         .hero {
             height: 100vh;
             min-height: 600px;
@@ -42,17 +46,15 @@
             padding: 0 15px;
         }
 
-        /* Prvi red */
         .title-top {
             font-size: 3.8rem;
             font-weight: 700;
             line-height: 1.1;
             color: white;
             margin-bottom: 0.3rem;
-            white-space: nowrap;           /* Uvek jedan red na velikim ekranima */
+            white-space: nowrap;
         }
 
-        /* Drugi red */
         .title-bottom {
             font-size: 4.2rem;
             font-weight: 700;
@@ -66,42 +68,59 @@
             padding: 18px 55px;
             border-radius: 50px;
             font-weight: 600;
-            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+            background-color: var(--main-blue);
+            border: none;
+            box-shadow: 0 10px 30px rgba(30, 136, 229, 0.4);
         }
 
-        /* ==================== RESPONSIVE ==================== */
+        .btn-call:hover {
+            transform: scale(1.08);
+            background-color: #1976d2;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive za naslov */
         @media (max-width: 1200px) {
-            .title-top { font-size: 4rem; }
-            .title-bottom { font-size: 4rem; }
+            .title-top { font-size: 3.4rem; }
+            .title-bottom { font-size: 3.8rem; }
         }
 
         @media (max-width: 992px) {
-            .title-top { font-size: 3rem; }
-            .title-bottom { font-size: 3rem; }
+            .title-top { font-size: 2.9rem; }
+            .title-bottom { font-size: 3.4rem; }
         }
 
-        /* Na mobilnim dozvoljavamo prelazak u novi red */
         @media (max-width: 768px) {
-            .title-top {
-                white-space: normal;       /* Dozvoljava wrap */
-                font-size: 3rem;
-            }
-            .title-bottom {
-                font-size: 3rem;
-            }
-            .btn-call { 
-                font-size: 1.35rem; 
-                padding: 16px 40px; 
-            }
+            .title-top { white-space: normal; font-size: 2.4rem; }
+            .title-bottom { font-size: 2.9rem; }
+            .btn-call { font-size: 1.35rem; padding: 16px 40px; }
         }
 
         @media (max-width: 576px) {
-            .title-top { 
-                font-size: 2.5rem; 
-            }
-            .title-bottom { 
-                font-size: 2.5rem; 
-            }
+            .title-top { font-size: 2.05rem; }
+            .title-bottom { font-size: 2.45rem; }
+        }
+
+        /* Usluge sekcija */
+        .services {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .service-card {
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--main-blue);
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
@@ -110,27 +129,67 @@
     <!-- HERO SEKCIJA -->
     <section class="hero">
         <div class="main-content">
-            
-            <h1 class="title-top">
-                Montaža • Servis
-            </h1>
-            
-            <h1 class="title-bottom">
-                Klima Uređaja
-            </h1>
+            <h1 class="title-top">Montaža • Servis</h1>
+            <h1 class="title-bottom">Klima Uređaja</h1>
             
             <p class="lead text-white mb-5 fs-4 fw-light">
                 Profesionalno • Brzo • Pouzdano • širom Srbije
             </p>
             
             <a href="tel:+38163690021" 
-               class="btn btn-danger btn-call d-inline-flex align-items-center gap-3">
+               class="btn btn-call d-inline-flex align-items-center gap-3">
                 <i class="bi bi-telephone-fill fs-3"></i>
                 Pozovite Odmah
             </a>
             
             <div class="mt-4 text-white-50 fs-5">
                 <strong>+381 63 690 021</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- USLUGE SEKCIJA -->
+    <section class="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-dark">Rešavamo vaše probleme</h2>
+                <p class="lead text-muted">Brzo, kvalitetno i pouzdano</p>
+            </div>
+
+            <div class="row g-4">
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card bg-white p-4 rounded-4 shadow-sm text-center h-100">
+                        <i class="bi bi-lightning-charge-fill service-icon"></i>
+                        <h4 class="fw-bold">Brza Montaža</h4>
+                        <p class="text-muted">Instalacija novog klima uređaja u roku od 24-48 sati od poziva.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card bg-white p-4 rounded-4 shadow-sm text-center h-100">
+                        <i class="bi bi-droplet-fill service-icon"></i>
+                        <h4 class="fw-bold">Godišnji Servis</h4>
+                        <p class="text-muted">Temeljno čišćenje i dezinfekcija za zdrav vazduh i duži vek trajanja klime.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card bg-white p-4 rounded-4 shadow-sm text-center h-100">
+                        <i class="bi bi-tools service-icon"></i>
+                        <h4 class="fw-bold">Popravke i Dopuna</h4>
+                        <p class="text-muted">Brza dijagnostika kvarova i dopuna freona originalnim gasom.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card bg-white p-4 rounded-4 shadow-sm text-center h-100">
+                        <i class="bi bi-chat-dots-fill service-icon"></i>
+                        <h4 class="fw-bold">Besplatno Savetovanje</h4>
+                        <p class="text-muted">Pomoć pri izboru prave klime (snaga, tip, lokacija) za vaš prostor.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
