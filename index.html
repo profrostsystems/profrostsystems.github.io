@@ -19,8 +19,8 @@
             background-attachment: fixed;
             position: relative;
             display: flex;
-            align-items: center;        /* Vertikalno centriranje */
-            justify-content: center;    /* Horizontalno centriranje */
+            align-items: center;
+            justify-content: center;
         }
 
         .hero::before {
@@ -42,14 +42,14 @@
             padding: 0 15px;
         }
 
-        /* Prvi red - uvek u jednoj liniji */
+        /* Prvi red */
         .title-top {
             font-size: 3.8rem;
             font-weight: 700;
-            line-height: 1.05;
-            white-space: nowrap;
+            line-height: 1.1;
             color: white;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
+            white-space: nowrap;           /* Uvek jedan red na velikim ekranima */
         }
 
         /* Drugi red */
@@ -69,12 +69,7 @@
             box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
         }
 
-        .btn-call:hover {
-            transform: scale(1.08);
-            transition: all 0.3s ease;
-        }
-
-        /* Responsive */
+        /* ==================== RESPONSIVE ==================== */
         @media (max-width: 1200px) {
             .title-top { font-size: 3.4rem; }
             .title-bottom { font-size: 3.8rem; }
@@ -85,9 +80,15 @@
             .title-bottom { font-size: 3.4rem; }
         }
 
+        /* Na mobilnim dozvoljavamo prelazak u novi red */
         @media (max-width: 768px) {
-            .title-top { font-size: 2.35rem; }
-            .title-bottom { font-size: 2.85rem; }
+            .title-top {
+                white-space: normal;       /* Dozvoljava wrap */
+                font-size: 2.4rem;
+            }
+            .title-bottom {
+                font-size: 2.9rem;
+            }
             .btn-call { 
                 font-size: 1.35rem; 
                 padding: 16px 40px; 
@@ -95,14 +96,18 @@
         }
 
         @media (max-width: 576px) {
-            .title-top { font-size: 1.95rem; }
-            .title-bottom { font-size: 2.4rem; }
+            .title-top { 
+                font-size: 2.05rem; 
+            }
+            .title-bottom { 
+                font-size: 2.45rem; 
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO SEKCIJA - centrirano u centar -->
+    <!-- HERO SEKCIJA -->
     <section class="hero">
         <div class="main-content">
             
